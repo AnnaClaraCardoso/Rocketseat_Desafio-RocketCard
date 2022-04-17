@@ -2,4 +2,106 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+}
+
+:root {
+  --bg: #000000;
+  --bg-card: #0E1218;
+  --text: #F1F1F1;
+  --img-profile: #8257e5;
+  --buttons: #FFF;
+  --border-button: #1A1A1A;
+}
+
+
+.rocketcard {
+  width: 70%;
+  height: 100vh;
+  margin: auto;
+}
+
+.card-container {
+  width: 368px;
+  background-color: var(--bg);
+  border-radius: 50px;
+  padding: 25px 15px;
+}
+
+/*
+
+  PROPRIEDADES CHAVE PARA FAZER DE UMA DIV-FILHA O BACKGROUND DA DIV-PAI
+
+  - Na div pai:
+    - contain: content/paint;
+  - Na div filha:
+    - position: absolute;
+    - z-index: -1;
+
+
+  PROPRIEDADES CHAVE PARA POSICIONAR UM ELEMENTO ABSOLUTO EM RELAÇÃO A DIV-PAI
+
+  - No elemento pai:
+    - position: relative;
+    - width: <largura-div-pai>
+    - height: <altura-div-pai>
+  - No elemento filho:
+    - position: absolute;
+    - bottom: <definir margem debaixo>
+    - top: <definir margem decima>
+    - right <definir margem direita>
+    - left: <definir margem esquerda>
+
+*/
+
+
+.profile-card {
+  height: 100%;
+  width: 100%;
+  contain: content;
+  border-radius: 50px;
+  background-color: var(--bg-card);
+  padding: 1em;
+}
+
+.profile-picture {
+  position: absolute;
+  z-index: -1;
+  transform: translateX(18%);
+}
+
+.profile-data-container {
+  min-height: 450px;
+  position: relative;
+}
+
+
+.profile-picture img {
+  width: 336px;
+  border: solid 8px var(--img-profile);
+  border-radius: 50%;
+}
+
+.info {
+  background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
+  border-radius: 50px;
+  padding: 20px;
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  bottom: 0;
+}
+
+.info ul {
+  list-style: none;
+}
+
+.info ul li img {
+  width: 20px;
+}
+
+.card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
