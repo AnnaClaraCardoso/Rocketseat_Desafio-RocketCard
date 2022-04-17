@@ -58,7 +58,8 @@ function render(user) {
   const infoTextspan = document.createElement("span");
 
   const cardFooter = document.createElement("footer");
-  const footerSpan = document.createElement("span");
+  const footerRocketSpan = document.createElement("span");
+  const footerTextSpan = document.createElement("span");
   const footerRocket = document.createElement("img");
   const { name, image, ...rest } = user;
 
@@ -81,7 +82,7 @@ function render(user) {
   cardFooter.setAttribute("class", "card-footer")
 
   userName.textContent = String(name);
-  footerSpan.innerText = "rocketcard";
+  footerTextSpan.innerText = "rocketcard"
 
 
   const arrayInfoItem = Object.entries(rest);
@@ -114,8 +115,10 @@ function render(user) {
 
   profileCard.appendChild(cardFooter)
 
-    cardFooter.appendChild(footerSpan)
-      footerSpan.appendChild(footerRocket)    
+    cardFooter.appendChild(footerRocketSpan)
+      footerRocketSpan.appendChild(footerRocket)    
+    cardFooter.appendChild(footerTextSpan)
+      
   
   cardContainer.appendChild(profileCard)
         
