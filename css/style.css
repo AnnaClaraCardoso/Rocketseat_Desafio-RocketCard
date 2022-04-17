@@ -45,6 +45,7 @@
 
 body {
   background-color: var(--bg-card);
+  overflow: hidden;
 }
 
 main.container {
@@ -66,6 +67,7 @@ main.container {
   padding: 25px 15px;
 }
 
+
 .profile-card {
   height: 100%;
   width: 100%;
@@ -75,11 +77,12 @@ main.container {
   background-color: var(--bg-card);
 }
 
-.profile-picture {
+.profile-photo {
   position: absolute;
   z-index: -1;
   transform: translate(18%, 15%);
 }
+
 
 .profile-card header {
   display: flex;
@@ -105,23 +108,24 @@ main.container {
   font-size: 24px;
 }
 
+
 .profile-data-container {
   min-height: 450px;
   padding-left: 20px;
   position: relative;
 }
 
-
-.profile-picture img {
+.profile-photo img {
   width: 336px;
   border: solid 8px var(--img-profile);
   border-radius: 50%;
 }
 
+
 .info {
   background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
   border-radius: 50px;
-  padding: 20px;
+  padding: 18px;
   width: 195px;
   height: 195px;
   position: absolute;
@@ -143,6 +147,7 @@ main.container {
   margin-right: 10px;
 }
 
+
 .card-footer {
   width: 100%;
   display: flex;
@@ -162,8 +167,13 @@ main.container {
   margin-right: 10px;
 }
 
-.color-switcher p {
-  margin-bottom: 1em;
+.color-switcher {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-switcher div {
+  margin-bottom: 2em;
 }
 
 .color-switcher button {
@@ -179,4 +189,8 @@ main.container {
 
 .color-switcher button:hover {
   color: #666666;
+}
+
+.color-switcher div input[type="color"] {
+  width: 100%;
 }
