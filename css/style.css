@@ -1,10 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Prompt', sans-serif;
-}
-
+/* STYLE GUIDE */
 :root {
   --bg: #000000;
   --bg-card: #0E1218;
@@ -14,23 +8,18 @@
   --border-button: #1A1A1A;
 }
 
-
-.rocketcard {
-  width: 70%;
-  height: 100vh;
-  margin: auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+  color: var(--text);
 }
 
-.card-container {
-  width: 368px;
-  background-color: var(--bg);
-  border-radius: 50px;
-  padding: 25px 15px;
-}
 
 /*
 
-  PROPRIEDADES CHAVE PARA FAZER DE UMA DIV-FILHA O BACKGROUND DA DIV-PAI
+  PROPRIEDADES CHAVE FAZER DE UMA DIV FILHA O BACKGROUND DA DIV PAI
 
   - Na div pai:
     - contain: content/paint;
@@ -39,12 +28,12 @@
     - z-index: -1;
 
 
-  PROPRIEDADES CHAVE PARA POSICIONAR UM ELEMENTO ABSOLUTO EM RELAÇÃO A DIV-PAI
+  PROPRIEDADES CHAVE POSICIONAR UM ELEMENTO ABSOLUTO EM RELAÇÃO AO ELEMENTO-PAI
 
   - No elemento pai:
     - position: relative;
-    - width: <largura-div-pai>
-    - height: <altura-div-pai>
+    - width: <largura-do-elemento-pai>
+    - height: <altura-do-elemento-pai>
   - No elemento filho:
     - position: absolute;
     - bottom: <definir margem debaixo>
@@ -54,24 +43,71 @@
 
 */
 
+body {
+  background-color: var(--bg-card);
+}
+
+main.container {
+  display: flex;
+  padding: 2em;
+  gap: 4em;
+  justify-content: center;
+  align-items: center;
+}
+
+.rocketcard {
+  text-align: center;
+}
+
+.card-container {
+  width: 400px;
+  background-color: var(--bg);
+  border-radius: 50px;
+  padding: 25px 15px;
+}
 
 .profile-card {
   height: 100%;
   width: 100%;
   contain: content;
   border-radius: 50px;
+  position: relative;
   background-color: var(--bg-card);
-  padding: 1em;
 }
 
 .profile-picture {
   position: absolute;
   z-index: -1;
-  transform: translateX(18%);
+  transform: translate(18%, 15%);
+}
+
+.profile-card header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 38px 0 0 33px;
+}
+
+.rocket-pin {
+  margin-right: 20px;
+  padding: 10px;
+  width: 55px;
+  height: 55px;
+  border: solid 1px var(--buttons);
+  border-radius: 50%;
+}
+
+.rocket-pin img {
+  width: 28px;
+}
+
+.user-name {
+  font-size: 24px;
 }
 
 .profile-data-container {
   min-height: 450px;
+  padding-left: 20px;
   position: relative;
 }
 
@@ -86,22 +122,61 @@
   background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
   border-radius: 50px;
   padding: 20px;
-  width: 170px;
-  height: 170px;
+  width: 195px;
+  height: 195px;
   position: absolute;
   bottom: 0;
 }
 
 .info ul {
   list-style: none;
+  text-align: start;
+}
+
+.info ul li {
+  line-height: 2em;
 }
 
 .info ul li img {
   width: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .card-footer {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+.card-footer span {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.card-footer span img {
+  width: 28px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.color-switcher p {
+  margin-bottom: 1em;
+}
+
+.color-switcher button {
+  background: var(--bg);
+  border: 2px solid var(--border-button);
+  border-radius: 15px;
+  padding: 10px 20px;
+  border: 0;
+  transition: background 0.2s;
+  font-size: 15px;
+  line-height: 23px;
+}
+
+.color-switcher button:hover {
+  color: #666666;
 }
